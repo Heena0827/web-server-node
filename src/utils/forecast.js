@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
             callback("Something went wrong on weatherstack api.")
         } else if(body.current) {
             const data = body.current
-            callback(undefined, `It is currently ${data.temperature} degrees outside, but it feels like ${data.feelslike} degrees.`)
+            callback(undefined, `It is currently ${data.temperature} degrees outside, but it feels like ${data.feelslike} degrees. Humidity is ${data.humidity}% as of now`)
         } else {
             callback("Unable to find requested location. Pls try with different location.")
         }
