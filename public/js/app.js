@@ -10,9 +10,9 @@ const result = document.getElementById("weather-info")
 
 formElement.addEventListener('submit', (e) => {
     e.preventDefault()
-    result.innerHTML = "Searching..."
+    result.innerHTML = "Loading..."
     const address = searchterm.value
-    fetch('http://localhost:3000/weather?weather='+address).then((response) => {
+    fetch('/weather?weather='+address).then((response) => {
         response.json().then((data) => {
             if(data.error) {
                 result.innerHTML = `Error: ${data.error}`
